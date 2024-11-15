@@ -15,5 +15,5 @@ parts:
   hello-world-go:
     plugin: go  
     build-snaps: [go/latest/stable]
-    source: https://github.com/certbot-io/snap
+    source: https://github.com/certbot-io/snap.git
     source-type: git
