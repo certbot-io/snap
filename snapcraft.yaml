@@ -1,0 +1,23 @@
+name: hello-world-go        # The name of the snap
+version: '0.0.1'               # Version of the application
+summary: A simple "Hello, World!" Go app   # Short description
+description: |
+  A simple Go program that prints "Hello, World!" to the console.
+  
+base: core24                  # Specify the base snap (core20 is used for Go 1.14+)
+confinement: strict            # Confinement level, strict for best security
+
+apps:
+  hello-world-go:
+    command: hello-world-go   # Command to run the app inside the snap
+
+parts:
+  hello-world-go:
+    plugin: go  
+    build-snaps: [go/latest/stable]
+    source: https://github.com/certbot-io/snap
+    source-type: git
+    override-pull: |
+      snapcraftctl pull
+      snapcraftctl set-version \
+      "$(git describe --long --tags --always --match=v*.*.* | sed 's/v//')"
