@@ -1,4 +1,4 @@
-name: My workflow
+name: Build Snap for Cerbot.cloud
 
 on: push
 
