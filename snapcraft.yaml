@@ -4,7 +4,7 @@ summary: A simple "Hello, World!" Go app   # Short description
 description: |
   A simple Go program that prints "Hello, World!" to the console.
   
-base: core22                  # Specify the base snap (core20 is used for Go 1.14+)
+base: core20                  # Specify the base snap (core20 is used for Go 1.14+)
 confinement: strict            # Confinement level, strict for best security
 
 apps:

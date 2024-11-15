@@ -3,7 +3,7 @@ name: My workflow
 on: push
 
 jobs:
-  my-job:
+  build-snap:
     runs-on: ubuntu-latest
     env:
       SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
