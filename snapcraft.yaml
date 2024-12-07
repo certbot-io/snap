@@ -1,0 +1,24 @@
+name: certbot-advanced
+version: '0.0.0.1'
+summary: App for CertBot.io
+description: |
+  A simple go app for Advanced Certbot with WebInterface
+
+base: core20
+confinement: strict
+grade: devel
+
+apps:
+  certbot-advanced:
+    command: certbot-advanced
+    plugs:
+      - home
+
+parts:
+  certbot-advanced:
+    plugin: go
+    source: https://github.com/certbot-io/snap.git
+    source-type: git
+    override-build: |
+      go build -o certbot-advanced  # Build binary
+      install -Dm755 certbot-advanced $SNAPCRAFT_PART_INSTALL/certbot-advanced
